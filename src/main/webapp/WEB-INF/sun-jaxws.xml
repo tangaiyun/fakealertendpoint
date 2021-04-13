@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+		   version="2.0">
+	<endpoint name="ExternalEvent" interface="com.plsseb.event.notification.INotify"
+			  implementation="com.plsseb.event.notification.NotifyImpl"
+			  url-pattern="/v1" />
+	<endpoint name="ExternalEvent"
+			  interface="com.plsseb.event.notification.v2.INotify"
+			  implementation="com.plsseb.event.notification.v2.NotifyImpl"
+			  url-pattern="/v2" />
+
+	<endpoint name="createRcmAssessmentRequest" interface="com.plsseb.alert.rcm.v1.INotify"
+			  implementation="com.plsseb.alert.rcm.v1.NotifyImpl"
+			  url-pattern="/rcmv1" />
+
+	<endpoint name="createRcmAssessmentRequest" interface="com.plsseb.alert.rcm.v2.INotify"
+			  implementation="com.plsseb.alert.rcm.v2.NotifyImpl"
+			  url-pattern="/rcmv2" />
+</endpoints>

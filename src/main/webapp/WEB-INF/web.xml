@@ -23,9 +23,20 @@
     </servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>tokenservlet</servlet-name>
+    <servlet-class>
+      com.plsseb.servlet.TokenServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>	
   <servlet-mapping>
     <servlet-name>serviceservlet</servlet-name>
     <url-pattern>/service</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>tokenservlet</servlet-name>
+    <url-pattern>/token</url-pattern>
   </servlet-mapping>
   <session-config>
     <session-timeout>120</session-timeout>

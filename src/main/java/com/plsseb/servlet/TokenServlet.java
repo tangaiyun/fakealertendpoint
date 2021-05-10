@@ -14,5 +14,11 @@ public class TokenServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println("faketokenfortest");
     }
+    
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter writer = resp.getWriter();
+        writer.println("faketokenfortest");
+    }
 
 }

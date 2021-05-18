@@ -9,16 +9,25 @@ import java.io.PrintWriter;
 
 public class TokenServlet extends HttpServlet {
 
-    @Override
+   @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        writer.println("faketokenfortest");
+        writer.println(genTokenContent());
     }
-    
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        writer.println("faketokenfortest");
+        writer.println(genTokenContent());
     }
 
+    private String genTokenContent() {
+        return "{    \n" +
+                "  \"access_token\":\"ACCESS_TOKEN\",\n" +
+                "  \"token_type\":\"bearer\",\n" +
+                "  \"expires_in\":2592000,\n" +
+                "  \"refresh_token\":\"REFRESH_TOKEN\",\n" +
+                "  \"scope\":\"xs_user.write\",\n" +
+                "}";
+    }
 }

@@ -27,7 +27,7 @@ public class TokenServlet extends HttpServlet {
                 "  \"token_type\":\"bearer\",\n" +
                 "  \"expires_in\":2592000,\n" +
                 "  \"refresh_token\":\"REFRESH_TOKEN\",\n" +
-                "  \"scope\":\"xs_user.write\",\n" +
+                "  \"scope\":\"xs_user.write\"\n" +
                 "}";
     }
 }

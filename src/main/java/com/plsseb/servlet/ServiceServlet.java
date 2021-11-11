@@ -20,8 +20,10 @@ public class ServiceServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String auth = req.getHeader("Authorization");
-		
-		if (auth != null && auth.startsWith("Bearer")){			
+		String auth1 = req.getHeader("authorization");
+		System.out.println("auth: " + auth);
+		System.out.println("auth1: " + auth1);
+		if (auth != null && auth.startsWith("Bearer")){
 			LoginContext loginContext;
 //			try {
 //				loginContext = LoginContextFactory.createLoginContext(AUTH.OAUTH.name());
@@ -38,6 +40,10 @@ public class ServiceServlet extends HttpServlet {
 	
 	@Override 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String auth = req.getHeader("Authorization");
+		String auth1 = req.getHeader("authorization");
+		System.out.println("auth: " + auth);
+		System.out.println("auth1: " + auth1);
 		PrintWriter writer = resp.getWriter();
 		writer.println(mockResponse(req));
 	}

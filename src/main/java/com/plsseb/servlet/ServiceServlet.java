@@ -21,8 +21,8 @@ public class ServiceServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String auth = req.getHeader("Authorization");
 		String auth1 = req.getHeader("authorization");
-		System.out.println("auth: " + auth);
-		System.out.println("auth1: " + auth1);
+		System.err.println("auth: " + auth);
+		System.err.println("auth1: " + auth1);
 		if (auth != null && auth.startsWith("Bearer")){
 			LoginContext loginContext;
 //			try {
@@ -42,8 +42,8 @@ public class ServiceServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String auth = req.getHeader("Authorization");
 		String auth1 = req.getHeader("authorization");
-		System.out.println("auth: " + auth);
-		System.out.println("auth1: " + auth1);
+		System.err.println("auth: " + auth);
+		System.err.println("auth1: " + auth1);
 		PrintWriter writer = resp.getWriter();
 		writer.println(mockResponse(req));
 	}

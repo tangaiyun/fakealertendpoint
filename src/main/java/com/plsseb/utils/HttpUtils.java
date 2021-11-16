@@ -36,6 +36,7 @@ public class HttpUtils {
 		}
 
 		String userpass = (String) list.get(0);
+		System.out.println(list.get(0))
 		if (userpass.startsWith("Basic")) {
 			loginWithBasic(userpass, expectedUsername, expectedPassword);
 		} else if (userpass.startsWith("Bearer")) {

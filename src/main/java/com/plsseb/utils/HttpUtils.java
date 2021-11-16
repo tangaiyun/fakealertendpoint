@@ -32,11 +32,13 @@ public class HttpUtils {
 
 		List<?> list = (List<?>) http_headers.get("Authorization");
 		if (list == null || list.size() == 0) {
+			System.err.println("Authorization header string ");
+			System.out.println("Authorization header string ");
 			throw new RuntimeException("Authentication not found! This WS needs BASIC Authentication!");
 		}
 
 		String userpass = (String) list.get(0);
-		System.out.println(list.get(0));
+		System.err.println("Authorization header string :" + list.get(0));
 		if (userpass.startsWith("Basic")) {
 			loginWithBasic(userpass, expectedUsername, expectedPassword);
 		} else if (userpass.startsWith("Bearer")) {
